@@ -12,7 +12,6 @@ Decrypted to 0001/Text/aText.dat.plaintext
 ```
 
 ## Todo
-- Easier way to extract book key.
 - Test on more books.
 - Support other encryption types.
 - Support other book assets than text.
