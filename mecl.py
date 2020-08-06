@@ -106,7 +106,9 @@ def generate_key(filepath, magic_offset):
 
 def decrypt_epubx(epubx_path):
     with ZipFile(epubx_path, 'r') as myzip:
-        param_files = fnmatch.filter(myzip.namelist(), "**/mash")
+        param_files = fnmatch.filter(myzip.namelist(), "mash")
+        if len(param_files) == 0:
+            param_files = fnmatch.filter(myzip.namelist(), "**/mash")
         if len(param_files) == 0:
             print("Warn: mash file not found. Ebook may be in different format. Resorting to bruteforcing magic offsets up to 2^16")
             magic_offsets = range(2**16)
